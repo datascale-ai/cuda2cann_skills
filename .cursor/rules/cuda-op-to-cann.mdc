@@ -1,0 +1,32 @@
+---
+description: Migrate CUDA operators, custom kernels, and PyTorch CUDA extensions to CANN on Ascend. Use when the user wants a CUDA op porting plan, ACLNN replacement analysis, Ascend C custom operator scaffolding, msopgen input generation, framework adapter stubs, or validation artifacts for Ascend NPU migration.
+alwaysApply: false
+---
+# CUDA Op to CANN
+
+Use this rule when the task is to migrate CUDA operators, custom kernels, or PyTorch CUDA extensions to CANN on Ascend.
+
+Canonical skill: `../../cuda-op-to-cann/SKILL.md`
+
+Canonical references:
+
+- `../../cuda-op-to-cann/references/migration-playbook.md`
+- `../../cuda-op-to-cann/references/cuda-to-cann-patterns.md`
+- `../../cuda-op-to-cann/references/unsupported-patterns.md`
+- `../../cuda-op-to-cann/references/pytorch-adapter-guide.md`
+- `../../cuda-op-to-cann/references/cann-version-matrix.md`
+- `../../cuda-op-to-cann/references/official-ascend-sources.md`
+
+Canonical scripts:
+
+- `../../cuda-op-to-cann/scripts/run_migration.py`
+- `../../cuda-op-to-cann/scripts/inspect_cuda_op.py`
+- `../../cuda-op-to-cann/scripts/generate_pytorch_integration.py`
+- `../../cuda-op-to-cann/scripts/remote_verify_msopgen.py`
+
+Load the canonical skill content and follow its workflow. The most important route-selection rules are:
+
+- Prefer built-in `aclnn` when the behavior is already covered.
+- Use `msOpGen + Ascend C` when the math is custom but structurally regular.
+- For PyTorch, distinguish eager OpPlugin integration from TorchAir graph-mode Meta registration.
+- Keep unsupported CUDA details explicit instead of pretending the port is production ready.

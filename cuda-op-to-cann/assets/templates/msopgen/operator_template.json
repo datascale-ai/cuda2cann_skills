@@ -1,0 +1,33 @@
+{
+  "operator": {
+    "name": "AddCustom",
+    "original_name": "add_custom",
+    "language": "cpp",
+    "compute_unit": "ai_core-Ascend910B",
+    "framework": "pytorch",
+    "cann_version": "8.0",
+    "inputs": [
+      {
+        "name": "x",
+        "dtype": "fp16",
+        "shape": "TODO"
+      },
+      {
+        "name": "y",
+        "dtype": "fp16",
+        "shape": "TODO"
+      }
+    ],
+    "outputs": [
+      {
+        "name": "out",
+        "dtype": "fp16",
+        "shape": "TODO"
+      }
+    ],
+    "attributes": [],
+    "notes": [
+      "Replace placeholder tensor metadata before using msopgen."
+    ]
+  }
+}

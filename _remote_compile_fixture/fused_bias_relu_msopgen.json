@@ -1,0 +1,95 @@
+[
+  {
+    "op": "FusedBiasRelu",
+    "language": "cpp",
+    "framework": "pytorch",
+    "cann_version": "8.3.RC1",
+    "compute_unit": "ai_core-ascend910b",
+    "input_desc": [
+      {
+        "name": "x",
+        "param_type": "required",
+        "format": [
+          "ND",
+          "ND",
+          "ND"
+        ],
+        "type": [
+          "fp16",
+          "float",
+          "int32"
+        ]
+      },
+      {
+        "name": "bias",
+        "param_type": "required",
+        "format": [
+          "ND",
+          "ND",
+          "ND"
+        ],
+        "type": [
+          "fp16",
+          "float",
+          "int32"
+        ]
+      },
+      {
+        "name": "residual",
+        "param_type": "required",
+        "format": [
+          "ND",
+          "ND",
+          "ND"
+        ],
+        "type": [
+          "fp16",
+          "float",
+          "int32"
+        ]
+      },
+      {
+        "name": "gamma",
+        "param_type": "required",
+        "format": [
+          "ND",
+          "ND",
+          "ND"
+        ],
+        "type": [
+          "fp16",
+          "float",
+          "int32"
+        ]
+      }
+    ],
+    "output_desc": [
+      {
+        "name": "out",
+        "param_type": "required",
+        "format": [
+          "ND",
+          "ND",
+          "ND"
+        ],
+        "type": [
+          "fp16",
+          "float",
+          "int32"
+        ]
+      }
+    ],
+    "attr": [
+      {
+        "name": "alpha",
+        "param_type": "required",
+        "type": "float"
+      },
+      {
+        "name": "fuse_residual",
+        "param_type": "required",
+        "type": "bool"
+      }
+    ]
+  }
+]

@@ -1,0 +1,4 @@
+interface:
+  display_name: "CUDA Op to CANN"
+  short_description: "Port CUDA operators to CANN and Ascend C"
+  default_prompt: "Use $cuda-op-to-cann to analyze a CUDA operator, choose an Ascend migration strategy, and generate a migration starter package."
