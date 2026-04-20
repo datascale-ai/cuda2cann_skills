@@ -37,10 +37,16 @@ python3 cuda-op-to-cann/scripts/run_migration.py \
   --output /tmp/cuda-op-port
 ```
 
-If you want to verify `msopgen` and build packaging on a remote Ascend host, create a local inventory file from [`machine.example.md`](./machine.example.md):
+If you want to verify `msopgen` and build packaging on a remote Ascend host, create your own local inventory file such as `machine.local.md`:
 
 ```bash
-cp machine.example.md machine.local.md
+cat > machine.local.md <<'EOF'
+机器：示例昇腾910B服务器
+IP地址：YOUR_HOST_OR_IP
+用户名：YOUR_USERNAME
+密码：YOUR_PASSWORD
+目录：/home/YOUR_USERNAME
+EOF
 ```
 
 Then run:
@@ -79,4 +85,4 @@ This refreshes:
 
 - Do not commit `machine.local.md` or any file that contains real host credentials.
 - Do not commit generated `out*` directories from local or remote verification runs.
-- The repository currently does not include a final open-source license file yet. Add one before publishing the GitHub repository.
+- Keep `cuda-op-to-cann/` as the canonical source of truth and regenerate agent-specific wrappers when needed.
